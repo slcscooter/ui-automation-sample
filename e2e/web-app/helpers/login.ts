@@ -10,27 +10,27 @@ export async function loginHelper(userName: string, userPassword: string): Promi
 
   // navigates to sample login page
   const loginPageURL = "http://www.stealmylogin.com/demo.html";
-  await driver.get(loginPageURL)
+  await driver.get(loginPageURL);
 
   // validates on sample login page
-  await driver.wait(until.urlContains(loginPageURL))
+  await driver.wait(until.urlContains(loginPageURL));
   const currentURL = await driver.getCurrentUrl();
-  expect(currentURL).toBe(loginPageURL)
+  expect(currentURL).toBe(loginPageURL);
 
   // finds and populates username
-  const username = await driver.wait(until.elementLocated(By.css("[name='username']")))
-  await driver.wait(until.elementIsVisible(username))
-  await username.sendKeys(userName)
+  const username = await driver.wait(until.elementLocated(By.css("[name='username']")));
+  await driver.wait(until.elementIsVisible(username));
+  await username.sendKeys(userName);
 
   // finds and populates username
-  const password = await driver.wait(until.elementLocated(By.css("[name='username']")))
-  await driver.wait(until.elementIsVisible(password))
-  await username.sendKeys(userPassword)
+  const password = await driver.wait(until.elementLocated(By.css("[name='username']")));
+  await driver.wait(until.elementIsVisible(password));
+  await username.sendKeys(userPassword);
 
   // finds and clicks login button
-  const loginButton = await driver.wait(until.elementLocated(By.css("[type='submit']")))
-  await driver.wait(until.elementIsVisible(loginButton))
-  await loginButton.click()
+  const loginButton = await driver.wait(until.elementLocated(By.css("[type='submit']")));
+  await driver.wait(until.elementIsVisible(loginButton));
+  await loginButton.click();
 
   return driver;
 }
