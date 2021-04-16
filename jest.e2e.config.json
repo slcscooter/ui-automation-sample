@@ -1,6 +1,0 @@
-{
-    "testEnvironment": "node",
-    "testMatch": ["<rootDir>/e2e/**/*.test.ts"],
-    "setupFilesAfterEnv": ["<rootDir>/e2e/setup-tests.ts"]
-  }
-  

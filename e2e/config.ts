@@ -39,10 +39,6 @@ export const baseWebappEnvironmentURL = function (): string {
   return "http://localhost:3000";
 };
 
-export const baseBridgeEnvironmentURL = function (): string {
-  return "http://localhost:3001";
-};
-
 /** Cleans up all drivers created by this process */
 export async function cleanupDrivers(): Promise<void> {
   await Promise.all(driversToCleanUp.map((driver) => driver.quit()));
